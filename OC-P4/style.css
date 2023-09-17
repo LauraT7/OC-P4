@@ -1,7 +1,7 @@
-.fa-stack-1x,
-.fa-stack-2x {
-  left: auto !important;
+.fa-stack-1x, .fa-stack-2x {
+  left: auto!important;
 }
+
 
 body {
   font-family: "Roboto", sans-serif;
@@ -116,6 +116,7 @@ a {
   padding: 1.5rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 2px 1px 8px -3px #7e7e7e;
+  max-width: 20rem;
 }
 
 .tuto li::before {
@@ -176,9 +177,8 @@ a {
 
 .restaurant__card__content {
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .restaurant__card__txt {
@@ -199,7 +199,7 @@ a {
 
 .restaurant__card__logo i {
   position: absolute;
-  right: 20px;
+  right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,11 +209,12 @@ a {
   transition: transform 400ms, color 400ms, background-clip 400ms;
 }
 
+
 .restaurant__card__logo i:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
   transition: all 400ms;
   background-clip: text;
-  background-image: linear-gradient(170deg, #ff93e1, #a16be0);
+  background-image: linear-gradient(170deg, #a16be0 30%, #ff93e1 70%);
   -webkit-background-clip: text;
   font-weight: 900;
   color: transparent;
@@ -223,6 +224,8 @@ a {
   background-color: #353535;
   color: white;
   padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer h5 {
@@ -233,9 +236,12 @@ a {
   font-weight: normal;
 }
 
-.footer p {
+.footer a {
   margin-bottom: 0.5rem;
   margin-top: 0;
+  color: white;
+  cursor: pointer;
+
 }
 
 .footer i {
@@ -254,7 +260,7 @@ a {
 
 .menu__logo {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   box-shadow: none;
 }
 
@@ -264,6 +270,8 @@ a {
   margin-left: 1rem;
   font-size: 1.3em;
   color: #7e7e7e;
+  position: absolute;
+  left: 1rem;
 }
 
 .menu__title {
@@ -285,13 +293,11 @@ a {
   flex-direction: column;
   padding: 0 0;
   background-color: #f6f6f6;
+
 }
 
-.menu__content__starter, .menu__content__dish, .menu__content__dessert {
-  animation-name: appear;
-  animation-duration: 1000ms;
-  animation-fill-mode: both;
-}
+
+
 
 .menu__content__dish {
   margin-top: 2rem;
@@ -315,29 +321,99 @@ a {
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
+.menu__content__card:nth-child(1) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+}
+
+.menu__content__card:nth-child(2) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 1000ms;
+}
+
+.menu__content__card:nth-child(3) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 2000ms;
+}
+
+.menu__content__card:nth-child(4) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 3000ms;
+}
+
+.menu__content__card:nth-child(5) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 4000ms;
+}
+
+.menu__content__card:nth-child(6) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 5000ms;
+}
+
+.menu__content__card:nth-child(7) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 6000ms;
+}
+
+.menu__content__card:nth-child(8) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 7000ms;
+}
+
+.menu__content__card:nth-child(9) {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-delay: 8000ms;
+}
+
+
 
 .card__check {
   color: #f6f6f6;
   background-color: #99e2d0;
-  margin-left: -50px;
-  width: 10%;
+  margin-left: -5rem;
+  width: 4rem;
   opacity: 0;
   transition: opacity 400ms;
 }
 
-.card__check:hover {
+.menu__content__card:hover p,
+.menu__content__card:hover h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.menu__content__card:hover .card__check {
   animation-name: check;
   animation-duration: 500ms;
   animation-fill-mode: both;
-  animation-delay: 500ms;
 }
 
-.card__check:not(:hover) {
+.menu__content__card:not(:hover) .card__check {
   animation-name: check-end;
-  animation-duration: 400ms;
+  animation-duration: 500ms;
   animation-fill-mode: both;
-  animation-delay: 0ms;
 }
 
 @keyframes appear {
@@ -368,10 +444,12 @@ a {
   0% {
     transform: translateX(0);
     opacity: 1;
+    margin-left: 0px;
   }
   100% {
     transform: translateX(100px);
     opacity: 0;
+    margin-left: -50px;
   }
 }
 
@@ -388,13 +466,13 @@ a {
   margin: 30% 30%;
   width: 30rem;
   font-size: xx-large;
-}
+} 
 
 .card__txt {
   display: flex;
   flex-direction: column;
   flex: 100%;
-  padding: 10px 20px;
+  padding: 10px 0 10px 5px;
 }
 
 .card__txt h4 {
@@ -403,17 +481,16 @@ a {
 }
 
 .card__txt__description {
-  flex: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .card__txt__description p {
   margin: 0.5rem 0.5em 0.5em 0;
+  overflow: hidden;
 }
 
 .card__txt__price {
@@ -444,6 +521,9 @@ h3 {
 }
 
 @media screen and (min-width: 1023px) {
+  .tuto {
+    padding: 1rem 5%;
+  }
   .tuto ol {
     display: flex;
     align-items: baseline;
@@ -457,35 +537,62 @@ h3 {
     flex-basis: 45%;
     margin: 3% 2%;
   }
-  .restaurant__card__new {
+  .restaurant__card .restaurant__card__new {
     right: auto;
     margin-left: 28%;
   }
-  .restaurant__card__content {
-    width: 80%;
-  }
+
   .restaurant__card__logo i {
     right: auto;
   }
+
+  .restaurant__card__logo .restaurant__card__logo--menu i {
+    right: 2rem;
+  }
+
   .footer {
     display: flex;
+    flex-direction: row;
   }
   .footer h5 {
     position: absolute;
     right: 5%;
   }
-  .footer p {
+  .footer a {
     margin-left: 2%;
   }
   .menu__content {
     max-width: 90%;
     margin: 0 auto;
   }
-  .menu__content__title {
+  .menu__content__card {
+    width: 80%;
+  margin: 1rem auto;
+  }
+
+  .menu__content__card:hover p,
+.menu__content__card:hover h4 {
+  max-width: 100%;
+}
+
+  .menu__content h3 {
+    
+      width: 80%;
+    margin: 1rem auto;
+     
+  }
+  .menu__title {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
   }
+  
+  .title__underline {
+    margin: 1rem 10%;
+  }
+
+  
 }
 
 @media screen and (min-width: 767px) {
